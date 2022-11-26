@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @Api(tags = "控制器-教程列表")
-@RequestMapping("/tutorials")
+@RequestMapping("/api/tutorials")
 public class TutorialController {
     @Autowired
     private TutorialService tutorialService;
