@@ -23,5 +23,18 @@ export default defineConfig((configEnv) => {
 				"@": srcPath,
 			},
 		},
+		server: {
+			host: "192.168.50.168",
+			port: 8888,
+			https: false,
+			cors: true,
+			proxy: {
+				"/api": {
+					target: "http://192.168.50.168:8088",
+					changeOrigin: true,
+					//rewrite: (path) => path.replace(/^\/api/, ""),
+				},
+			},
+		},
 	};
 });

@@ -41,6 +41,7 @@ const state = reactive<ILayoutState>({
 	<router-view />
 	<van-tabbar v-model="active" route>
 		<van-tabbar-item
+			:key="item"
 			v-for="item in state.tabbars"
 			:name="item.name"
 			:icon="item.icon"

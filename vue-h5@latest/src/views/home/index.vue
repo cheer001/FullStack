@@ -1,4 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from "vue";
+import { getTutorials } from "../../api/home";
+
+onMounted(() => {
+	getTutorials()
+		.then((res) => {
+			console.log(import.meta.env.VITE_APP_API_URL);
+			console.log("res:", res);
+		})
+		.catch((error) => {
+			console.log("error", error);
+		});
+});
+</script>
 <template>
 	<div class="home">
 		<div class="logo">Logo</div>
